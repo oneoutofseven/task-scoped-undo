@@ -1,0 +1,6 @@
+# Keep the tested simulator's core dependencies while adding CuRobo.
+packaging==23.0
+setuptools-scm==8.1.0
+numpy==1.26.0
+torch==2.7.0
+warp-lang==1.12.0

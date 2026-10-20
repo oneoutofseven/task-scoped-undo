@@ -1,0 +1,9 @@
+{
+  "episode_id": "dinner_001",
+  "target_task_id": "A",
+  "goal_source": "human_reference",
+  "moves": [["plate", "storage_surface"]],
+  "protected_objects": ["cup", "book"],
+  "position_tolerance_m": 0.02,
+  "orientation_tolerance_deg": 5.0
+}

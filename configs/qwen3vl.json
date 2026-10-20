@@ -1,0 +1,9 @@
+{
+  "base_url": "http://127.0.0.1:18000/v1",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "api_key_env": "TASK_UNDO_API_KEY",
+  "request_timeout_s": 120,
+  "max_tokens": 1536,
+  "max_turns": 12,
+  "max_actions": 8
+}

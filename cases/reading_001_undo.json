@@ -1,0 +1,17 @@
+{
+  "episode_id": "reading_001",
+  "target_task_id": "A",
+  "goal_source": "human_reference",
+  "moves": [
+    [
+      "book",
+      "storage_surface"
+    ]
+  ],
+  "protected_objects": [
+    "cup",
+    "plate"
+  ],
+  "position_tolerance_m": 0.02,
+  "orientation_tolerance_deg": 5.0
+}

@@ -1,0 +1,18 @@
+diff --git a/OmniGibson/omnigibson/action_primitives/curobo.py b/OmniGibson/omnigibson/action_primitives/curobo.py
+index afd943b..8685038 100644
+--- a/OmniGibson/omnigibson/action_primitives/curobo.py
++++ b/OmniGibson/omnigibson/action_primitives/curobo.py
+@@ -300,9 +300,11 @@ class CuRoboMotionGenerator:
+                     m = lazy.curobo.geom.types.Mesh(
+                         name=collision_mesh.prim_path,
+                         pose=th.cat([pos, orn]).tolist(),
+-                        vertices=collision_mesh.points.numpy(),
++                        # Bake the full scale/shear into vertices using the current Fabric transform.
++                        vertices=T.transform_points(
++                            collision_mesh.points, th.linalg.inv(obj_pose) @ collision_mesh.scaled_transform
++                        ).numpy(),
+                         faces=collision_mesh.faces.numpy(),
+-                        scale=collision_mesh.get_world_scale().numpy(),
+                     )
+                     obstacles["mesh"].append(m)
+ 

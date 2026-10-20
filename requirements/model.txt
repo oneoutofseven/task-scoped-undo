@@ -1,0 +1,3 @@
+# Install only in undo_model, never in undo_sim.
+vllm==0.11.0
+transformers==4.57.1

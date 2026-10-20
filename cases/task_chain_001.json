@@ -1,0 +1,160 @@
+{
+  "episode_id": "task_chain_001",
+  "description": "Three sequential tasks with a physical action prefix; C declaration/request endings are authored separately.",
+  "objects": [
+    {
+      "type": "DatasetObject",
+      "name": "plate",
+      "category": "plate",
+      "model": "aewthq",
+      "position": [
+        -0.75,
+        -1.15,
+        0.55
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "cup",
+      "category": "mug",
+      "model": "dhnxww",
+      "position": [
+        -0.3,
+        -0.8,
+        0.6
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "book",
+      "category": "hardback",
+      "model": "acaxtl",
+      "position": [
+        -0.2,
+        -1.4,
+        0.6
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "dining_table",
+      "category": "breakfast_table",
+      "model": "rjgmmy",
+      "scale": [
+        1.1,
+        1.1,
+        0.7
+      ],
+      "position": [
+        -1.05,
+        0.65,
+        0.4
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "desk",
+      "category": "breakfast_table",
+      "model": "rjgmmy",
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "position": [
+        1.1,
+        0.25,
+        0.4
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "surfaces": {
+    "storage_surface": "coffee_table_fqluyq_0",
+    "dining_table": "dining_table",
+    "desk": "desk"
+  },
+  "tasks": [
+    {
+      "task_id": "A",
+      "initiator": "user",
+      "executor": "robot",
+      "instruction": "Set out the plate and cup on the dining table for dinner tonight.",
+      "moves": [
+        [
+          "plate",
+          "dining_table"
+        ],
+        [
+          "cup",
+          "dining_table"
+        ]
+      ]
+    },
+    {
+      "task_id": "B",
+      "initiator": "family_member",
+      "executor": "robot",
+      "instruction": "Move the cup from the dining table to the desk, then explicitly reserve it as the drinking cup for this activity.",
+      "moves": [
+        [
+          "cup",
+          "desk"
+        ]
+      ],
+      "use_claim_timing": "after_moves",
+      "use_claim": {
+        "object_id": "cup",
+        "actor": "family_member",
+        "purpose": "personal_drinking",
+        "utterance": "Reserve this cup for the desk drinking-water activity."
+      }
+    },
+    {
+      "task_id": "C",
+      "initiator": "family_member",
+      "executor": "robot",
+      "instruction": "For a later reading activity, move the book from the storage surface to the dining table.",
+      "moves": [
+        [
+          "book",
+          "dining_table"
+        ]
+      ]
+    }
+  ],
+  "undo_request": {
+    "actor": "user",
+    "target_task_id": "A",
+    "utterance": "Dinner tonight is cancelled. Undo the dinner preparation."
+  }
+}

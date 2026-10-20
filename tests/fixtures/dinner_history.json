@@ -1,0 +1,1534 @@
+{
+  "source": "dinner_episode/run_04: validated physical history",
+  "case": {
+    "episode_id": "dinner_001",
+    "description": "After the dinner setup, a family member takes over the cup and places their own book on the dining table.",
+    "objects": [
+      {
+        "type": "DatasetObject",
+        "name": "plate",
+        "category": "plate",
+        "model": "aewthq",
+        "position": [
+          -0.75,
+          -1.15,
+          0.55
+        ],
+        "orientation": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "type": "DatasetObject",
+        "name": "cup",
+        "category": "mug",
+        "model": "dhnxww",
+        "position": [
+          -0.3,
+          -0.8,
+          0.6
+        ],
+        "orientation": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "type": "DatasetObject",
+        "name": "book",
+        "category": "hardback",
+        "model": "acaxtl",
+        "position": [
+          -0.2,
+          -1.4,
+          0.6
+        ],
+        "orientation": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "type": "DatasetObject",
+        "name": "dining_table",
+        "category": "breakfast_table",
+        "model": "rjgmmy",
+        "scale": [
+          1.1,
+          1.1,
+          0.7
+        ],
+        "position": [
+          -1.05,
+          0.65,
+          0.4
+        ],
+        "orientation": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "type": "DatasetObject",
+        "name": "desk",
+        "category": "breakfast_table",
+        "model": "rjgmmy",
+        "scale": [
+          0.7,
+          0.7,
+          0.7
+        ],
+        "position": [
+          1.1,
+          0.25,
+          0.4
+        ],
+        "orientation": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "surfaces": {
+      "storage_surface": "coffee_table_fqluyq_0",
+      "dining_table": "dining_table",
+      "desk": "desk"
+    },
+    "tasks": [
+      {
+        "task_id": "A",
+        "initiator": "user",
+        "executor": "robot",
+        "instruction": "Set out the plate and cup on the dining table for dinner tonight.",
+        "moves": [
+          [
+            "plate",
+            "dining_table"
+          ],
+          [
+            "cup",
+            "dining_table"
+          ]
+        ]
+      },
+      {
+        "task_id": "B",
+        "initiator": "family_member",
+        "executor": "robot",
+        "instruction": "Move this cup to the desk for me to drink from, then place my book on the dining table.",
+        "use_claim": {
+          "object_id": "cup",
+          "actor": "family_member",
+          "purpose": "personal_drinking",
+          "utterance": "I am keeping this cup as my personal drinking cup."
+        },
+        "moves": [
+          [
+            "cup",
+            "desk"
+          ],
+          [
+            "book",
+            "dining_table"
+          ]
+        ]
+      }
+    ],
+    "undo_request": {
+      "actor": "user",
+      "target_task_id": "A",
+      "utterance": "Dinner tonight is cancelled. Undo the dinner setup."
+    }
+  },
+  "events": [
+    {
+      "event_id": 1,
+      "episode_id": "dinner_001",
+      "kind": "episode_started",
+      "control_step": 0,
+      "sim_seconds": 2.0666667744517326,
+      "scenario_origin": "scripted",
+      "surfaces": {
+        "storage_surface": "coffee_table_fqluyq_0",
+        "dining_table": "dining_table",
+        "desk": "desk"
+      },
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.7500069737434387,
+              -1.15000581741333,
+              0.4052407145500183
+            ],
+            "orientation": [
+              0.00035670018405653536,
+              -0.0003116629959549755,
+              8.500411752265791e-08,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -0.29920825362205505,
+              -0.7992391586303711,
+              0.4223047196865082
+            ],
+            "orientation": [
+              0.00018179757171310484,
+              -0.000504413153976202,
+              -0.00018751874449662864,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19981749355793,
+              -1.3998970985412598,
+              0.4056805670261383
+            ],
+            "orientation": [
+              0.0002366697444813326,
+              -0.000288402137812227,
+              -3.989060530784627e-07,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 2,
+      "episode_id": "dinner_001",
+      "kind": "task_started",
+      "control_step": 0,
+      "sim_seconds": 2.0666667744517326,
+      "task_id": "A",
+      "initiator": "user",
+      "executor": "robot",
+      "instruction": "Set out the plate and cup on the dining table for dinner tonight."
+    },
+    {
+      "event_id": 3,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 0,
+      "sim_seconds": 2.0666667744517326,
+      "task_id": "A",
+      "initiator": "user",
+      "executor": "robot",
+      "action": "GRASP",
+      "object_id": "plate",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.7500069737434387,
+              -1.15000581741333,
+              0.4052407145500183
+            ],
+            "orientation": [
+              0.00035670018405653536,
+              -0.0003116629959549755,
+              8.500411752265791e-08,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -0.29920825362205505,
+              -0.7992391586303711,
+              0.4223047196865082
+            ],
+            "orientation": [
+              0.00018179757171310484,
+              -0.000504413153976202,
+              -0.00018751874449662864,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19981749355793,
+              -1.3998970985412598,
+              0.4056805670261383
+            ],
+            "orientation": [
+              0.0002366697444813326,
+              -0.000288402137812227,
+              -3.989060530784627e-07,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 4,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 1392,
+      "sim_seconds": 48.46666919440031,
+      "request_event_id": 3,
+      "task_id": "A",
+      "action": "GRASP",
+      "object_id": "plate",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9697772264480591,
+              -0.9412583112716675,
+              0.6715890169143677
+            ],
+            "orientation": [
+              0.12548741698265076,
+              -0.04294242709875107,
+              0.9356240630149841,
+              0.32713350653648376
+            ],
+            "on": [],
+            "held": true
+          },
+          "cup": {
+            "position": [
+              -0.299268901348114,
+              -0.7992903590202332,
+              0.422309547662735
+            ],
+            "orientation": [
+              0.00038989170570857823,
+              -0.0003703056718222797,
+              -0.0002719812036957592,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19984067976474762,
+              -1.399928331375122,
+              0.4056805372238159
+            ],
+            "orientation": [
+              0.00023640951258130372,
+              -0.0002880841784644872,
+              -0.0001711770164547488,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 5,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 1392,
+      "sim_seconds": 48.46666919440031,
+      "task_id": "A",
+      "initiator": "user",
+      "executor": "robot",
+      "action": "PLACE_ON_TOP",
+      "object_id": "plate",
+      "target_surface": "dining_table",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9697772264480591,
+              -0.9412583112716675,
+              0.6715890169143677
+            ],
+            "orientation": [
+              0.12548741698265076,
+              -0.04294242709875107,
+              0.9356240630149841,
+              0.32713350653648376
+            ],
+            "on": [],
+            "held": true
+          },
+          "cup": {
+            "position": [
+              -0.299268901348114,
+              -0.7992903590202332,
+              0.422309547662735
+            ],
+            "orientation": [
+              0.00038989170570857823,
+              -0.0003703056718222797,
+              -0.0002719812036957592,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19984067976474762,
+              -1.399928331375122,
+              0.4056805372238159
+            ],
+            "orientation": [
+              0.00023640951258130372,
+              -0.0002880841784644872,
+              -0.0001711770164547488,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 6,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 2260,
+      "sim_seconds": 78.40000408887863,
+      "request_event_id": 5,
+      "task_id": "A",
+      "action": "PLACE_ON_TOP",
+      "object_id": "plate",
+      "target_surface": "dining_table",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.974272608757019,
+              0.5155067443847656,
+              0.42232397198677063
+            ],
+            "orientation": [
+              0.000519354420248419,
+              0.00044585534487850964,
+              0.7396166920661926,
+              -0.6730281114578247
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -0.29926735162734985,
+              -0.7992910146713257,
+              0.4223088324069977
+            ],
+            "orientation": [
+              0.00040209825965575874,
+              -0.0003448904899414629,
+              -0.0002710467088036239,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19983963668346405,
+              -1.3999282121658325,
+              0.4056805670261383
+            ],
+            "orientation": [
+              0.00023651449009776115,
+              -0.00028728670440614223,
+              -0.00017138978000730276,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 7,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 2260,
+      "sim_seconds": 78.40000408887863,
+      "task_id": "A",
+      "initiator": "user",
+      "executor": "robot",
+      "action": "GRASP",
+      "object_id": "cup",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.974272608757019,
+              0.5155067443847656,
+              0.42232397198677063
+            ],
+            "orientation": [
+              0.000519354420248419,
+              0.00044585534487850964,
+              0.7396166920661926,
+              -0.6730281114578247
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -0.29926735162734985,
+              -0.7992910146713257,
+              0.4223088324069977
+            ],
+            "orientation": [
+              0.00040209825965575874,
+              -0.0003448904899414629,
+              -0.0002710467088036239,
+              0.9999998807907104
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19983963668346405,
+              -1.3999282121658325,
+              0.4056805670261383
+            ],
+            "orientation": [
+              0.00023651449009776115,
+              -0.00028728670440614223,
+              -0.00017138978000730276,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 8,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 3178,
+      "sim_seconds": 109.000005684793,
+      "request_event_id": 7,
+      "task_id": "A",
+      "action": "GRASP",
+      "object_id": "cup",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742724895477295,
+              0.5155068635940552,
+              0.42232394218444824
+            ],
+            "orientation": [
+              0.0005213055410422385,
+              0.00044742284808307886,
+              0.7396166324615479,
+              -0.6730281114578247
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -0.4585241973400116,
+              -0.7569077014923096,
+              0.6453108787536621
+            ],
+            "orientation": [
+              0.05007481575012207,
+              -0.06414163112640381,
+              0.7815963625907898,
+              0.6184541583061218
+            ],
+            "on": [],
+            "held": true
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 9,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 3178,
+      "sim_seconds": 109.000005684793,
+      "task_id": "A",
+      "initiator": "user",
+      "executor": "robot",
+      "action": "PLACE_ON_TOP",
+      "object_id": "cup",
+      "target_surface": "dining_table",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742724895477295,
+              0.5155068635940552,
+              0.42232394218444824
+            ],
+            "orientation": [
+              0.0005213055410422385,
+              0.00044742284808307886,
+              0.7396166324615479,
+              -0.6730281114578247
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -0.4585241973400116,
+              -0.7569077014923096,
+              0.6453108787536621
+            ],
+            "orientation": [
+              0.05007481575012207,
+              -0.06414163112640381,
+              0.7815963625907898,
+              0.6184541583061218
+            ],
+            "on": [],
+            "held": true
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 10,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 4205,
+      "sim_seconds": 144.23334085568786,
+      "request_event_id": 9,
+      "task_id": "A",
+      "action": "PLACE_ON_TOP",
+      "object_id": "cup",
+      "target_surface": "dining_table",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742729663848877,
+              0.5155067443847656,
+              0.4223240911960602
+            ],
+            "orientation": [
+              0.0005218014703132212,
+              0.00044831851846538484,
+              0.7396162152290344,
+              -0.6730285286903381
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -1.304065227508545,
+              0.24233974516391754,
+              0.43917223811149597
+            ],
+            "orientation": [
+              0.0002754279994405806,
+              0.000635971431620419,
+              0.9584565162658691,
+              -0.28523775935173035
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 11,
+      "episode_id": "dinner_001",
+      "kind": "task_completed",
+      "control_step": 4205,
+      "sim_seconds": 144.23334085568786,
+      "task_id": "A",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742729663848877,
+              0.5155067443847656,
+              0.4223240911960602
+            ],
+            "orientation": [
+              0.0005218014703132212,
+              0.00044831851846538484,
+              0.7396162152290344,
+              -0.6730285286903381
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -1.304065227508545,
+              0.24233974516391754,
+              0.43917223811149597
+            ],
+            "orientation": [
+              0.0002754279994405806,
+              0.000635971431620419,
+              0.9584565162658691,
+              -0.28523775935173035
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 12,
+      "episode_id": "dinner_001",
+      "kind": "task_started",
+      "control_step": 4205,
+      "sim_seconds": 144.23334085568786,
+      "task_id": "B",
+      "initiator": "family_member",
+      "executor": "robot",
+      "instruction": "Move this cup to the desk for me to drink from, then place my book on the dining table."
+    },
+    {
+      "event_id": 13,
+      "episode_id": "dinner_001",
+      "kind": "use_claimed",
+      "control_step": 4205,
+      "sim_seconds": 144.23334085568786,
+      "task_id": "B",
+      "evidence_source": "scenario_authored_declaration",
+      "object_id": "cup",
+      "actor": "family_member",
+      "purpose": "personal_drinking",
+      "utterance": "I am keeping this cup as my personal drinking cup."
+    },
+    {
+      "event_id": 14,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 4205,
+      "sim_seconds": 144.23334085568786,
+      "task_id": "B",
+      "initiator": "family_member",
+      "executor": "robot",
+      "action": "GRASP",
+      "object_id": "cup",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742729663848877,
+              0.5155067443847656,
+              0.4223240911960602
+            ],
+            "orientation": [
+              0.0005218014703132212,
+              0.00044831851846538484,
+              0.7396162152290344,
+              -0.6730285286903381
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -1.304065227508545,
+              0.24233974516391754,
+              0.43917223811149597
+            ],
+            "orientation": [
+              0.0002754279994405806,
+              0.000635971431620419,
+              0.9584565162658691,
+              -0.28523775935173035
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 15,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 5162,
+      "sim_seconds": 176.1333425194025,
+      "request_event_id": 14,
+      "task_id": "B",
+      "action": "GRASP",
+      "object_id": "cup",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742704629898071,
+              0.5155084133148193,
+              0.4223240315914154
+            ],
+            "orientation": [
+              0.0005254223942756653,
+              0.00044787838123738766,
+              0.7396165728569031,
+              -0.6730282306671143
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -1.1164621114730835,
+              0.2514486610889435,
+              0.6431441307067871
+            ],
+            "orientation": [
+              -0.07670722156763077,
+              0.029505643993616104,
+              0.994972825050354,
+              -0.05722397193312645
+            ],
+            "on": [],
+            "held": true
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 16,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 5162,
+      "sim_seconds": 176.1333425194025,
+      "task_id": "B",
+      "initiator": "family_member",
+      "executor": "robot",
+      "action": "PLACE_ON_TOP",
+      "object_id": "cup",
+      "target_surface": "desk",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742704629898071,
+              0.5155084133148193,
+              0.4223240315914154
+            ],
+            "orientation": [
+              0.0005254223942756653,
+              0.00044787838123738766,
+              0.7396165728569031,
+              -0.6730282306671143
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              -1.1164621114730835,
+              0.2514486610889435,
+              0.6431441307067871
+            ],
+            "orientation": [
+              -0.07670722156763077,
+              0.029505643993616104,
+              0.994972825050354,
+              -0.05722397193312645
+            ],
+            "on": [],
+            "held": true
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 17,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 5894,
+      "sim_seconds": 201.53334384411573,
+      "request_event_id": 16,
+      "task_id": "B",
+      "action": "PLACE_ON_TOP",
+      "object_id": "cup",
+      "target_surface": "desk",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742704629898071,
+              0.5155083537101746,
+              0.4223240613937378
+            ],
+            "orientation": [
+              0.0005254916031844914,
+              0.0004479700874071568,
+              0.7396162152290344,
+              -0.6730286478996277
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              1.0142754316329956,
+              0.5149931907653809,
+              0.4379844665527344
+            ],
+            "orientation": [
+              0.0003442457818891853,
+              0.0010359989246353507,
+              0.9753957986831665,
+              -0.2204582542181015
+            ],
+            "on": [
+              "desk"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 18,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 5894,
+      "sim_seconds": 201.53334384411573,
+      "task_id": "B",
+      "initiator": "family_member",
+      "executor": "robot",
+      "action": "GRASP",
+      "object_id": "book",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742704629898071,
+              0.5155083537101746,
+              0.4223240613937378
+            ],
+            "orientation": [
+              0.0005254916031844914,
+              0.0004479700874071568,
+              0.7396162152290344,
+              -0.6730286478996277
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              1.0142754316329956,
+              0.5149931907653809,
+              0.4379844665527344
+            ],
+            "orientation": [
+              0.0003442457818891853,
+              0.0010359989246353507,
+              0.9753957986831665,
+              -0.2204582542181015
+            ],
+            "on": [
+              "desk"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.19984236359596252,
+              -1.399928331375122,
+              0.4056794047355652
+            ],
+            "orientation": [
+              0.00023675400007050484,
+              -0.00033381799585185945,
+              -0.0001723336463328451,
+              0.9999999403953552
+            ],
+            "on": [
+              "storage_surface"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 19,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 7181,
+      "sim_seconds": 244.4333460815251,
+      "request_event_id": 18,
+      "task_id": "B",
+      "action": "GRASP",
+      "object_id": "book",
+      "target_surface": null,
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742704629898071,
+              0.5155081748962402,
+              0.4223240613937378
+            ],
+            "orientation": [
+              0.0005225237109698355,
+              0.0004452508583199233,
+              0.7396165132522583,
+              -0.6730282306671143
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              1.0142754316329956,
+              0.5149931907653809,
+              0.437984436750412
+            ],
+            "orientation": [
+              0.000344031403074041,
+              0.0010363776236772537,
+              0.9753963947296143,
+              -0.22045573592185974
+            ],
+            "on": [
+              "desk"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.16486623883247375,
+              -1.200061321258545,
+              0.6596871614456177
+            ],
+            "orientation": [
+              0.017606472596526146,
+              -0.13065101206302643,
+              0.169979989528656,
+              0.9765896201133728
+            ],
+            "on": [],
+            "held": true
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 20,
+      "episode_id": "dinner_001",
+      "kind": "action_requested",
+      "control_step": 7181,
+      "sim_seconds": 244.4333460815251,
+      "task_id": "B",
+      "initiator": "family_member",
+      "executor": "robot",
+      "action": "PLACE_ON_TOP",
+      "object_id": "book",
+      "target_surface": "dining_table",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742704629898071,
+              0.5155081748962402,
+              0.4223240613937378
+            ],
+            "orientation": [
+              0.0005225237109698355,
+              0.0004452508583199233,
+              0.7396165132522583,
+              -0.6730282306671143
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              1.0142754316329956,
+              0.5149931907653809,
+              0.437984436750412
+            ],
+            "orientation": [
+              0.000344031403074041,
+              0.0010363776236772537,
+              0.9753963947296143,
+              -0.22045573592185974
+            ],
+            "on": [
+              "desk"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.16486623883247375,
+              -1.200061321258545,
+              0.6596871614456177
+            ],
+            "orientation": [
+              0.017606472596526146,
+              -0.13065101206302643,
+              0.169979989528656,
+              0.9765896201133728
+            ],
+            "on": [],
+            "held": true
+          }
+        },
+        "hand_empty": false
+      }
+    },
+    {
+      "event_id": 21,
+      "episode_id": "dinner_001",
+      "kind": "action_succeeded",
+      "control_step": 7960,
+      "sim_seconds": 271.400014154613,
+      "request_event_id": 20,
+      "task_id": "B",
+      "action": "PLACE_ON_TOP",
+      "object_id": "book",
+      "target_surface": "dining_table",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742622375488281,
+              0.5155136585235596,
+              0.42232435941696167
+            ],
+            "orientation": [
+              0.0005340005736798048,
+              0.00044680104474537075,
+              0.7396164536476135,
+              -0.6730283498764038
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              1.0142759084701538,
+              0.5149936079978943,
+              0.4379844665527344
+            ],
+            "orientation": [
+              0.00034272082848474383,
+              0.001039348542690277,
+              0.9753952026367188,
+              -0.22046113014221191
+            ],
+            "on": [
+              "desk"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.7665525674819946,
+              0.6012563705444336,
+              0.4224197566509247
+            ],
+            "orientation": [
+              0.00022865834762342274,
+              0.000542887079063803,
+              0.9872531890869141,
+              -0.1591568887233734
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 22,
+      "episode_id": "dinner_001",
+      "kind": "task_completed",
+      "control_step": 7960,
+      "sim_seconds": 271.400014154613,
+      "task_id": "B",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742622375488281,
+              0.5155136585235596,
+              0.42232435941696167
+            ],
+            "orientation": [
+              0.0005340005736798048,
+              0.00044680104474537075,
+              0.7396164536476135,
+              -0.6730283498764038
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              1.0142759084701538,
+              0.5149936079978943,
+              0.4379844665527344
+            ],
+            "orientation": [
+              0.00034272082848474383,
+              0.001039348542690277,
+              0.9753952026367188,
+              -0.22046113014221191
+            ],
+            "on": [
+              "desk"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.7665525674819946,
+              0.6012563705444336,
+              0.4224197566509247
+            ],
+            "orientation": [
+              0.00022865834762342274,
+              0.000542887079063803,
+              0.9872531890869141,
+              -0.1591568887233734
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    },
+    {
+      "event_id": 23,
+      "episode_id": "dinner_001",
+      "kind": "undo_requested",
+      "control_step": 7960,
+      "sim_seconds": 271.400014154613,
+      "actor": "user",
+      "target_task_id": "A",
+      "utterance": "Dinner tonight is cancelled. Undo the dinner setup.",
+      "observation": {
+        "objects": {
+          "plate": {
+            "position": [
+              -0.9742622375488281,
+              0.5155136585235596,
+              0.42232435941696167
+            ],
+            "orientation": [
+              0.0005340005736798048,
+              0.00044680104474537075,
+              0.7396164536476135,
+              -0.6730283498764038
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          },
+          "cup": {
+            "position": [
+              1.0142759084701538,
+              0.5149936079978943,
+              0.4379844665527344
+            ],
+            "orientation": [
+              0.00034272082848474383,
+              0.001039348542690277,
+              0.9753952026367188,
+              -0.22046113014221191
+            ],
+            "on": [
+              "desk"
+            ],
+            "held": false
+          },
+          "book": {
+            "position": [
+              -0.7665525674819946,
+              0.6012563705444336,
+              0.4224197566509247
+            ],
+            "orientation": [
+              0.00022865834762342274,
+              0.000542887079063803,
+              0.9872531890869141,
+              -0.1591568887233734
+            ],
+            "on": [
+              "dining_table"
+            ],
+            "held": false
+          }
+        },
+        "hand_empty": true
+      }
+    }
+  ]
+}

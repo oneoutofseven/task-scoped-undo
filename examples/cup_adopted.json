@@ -1,0 +1,23 @@
+{
+  "objects": {
+    "cup": "a drinking cup",
+    "book": "a book",
+    "plate": "a plate"
+  },
+  "surfaces": {
+    "storage_surface": "the original storage surface",
+    "dining_table": "the activity table"
+  },
+  "current_supports": {
+    "cup": "dining_table",
+    "book": "dining_table",
+    "plate": "dining_table"
+  },
+  "activity_log": [
+    "Initially, the cup, book and plate were on the storage surface.",
+    "During the setup task, the robot placed the cup and book on the dining table.",
+    "During a separate snack task, a family member placed the plate on the dining table.",
+    "During a later personal-use task, a family member explicitly reserved the cup for personal use. No object was moved."
+  ],
+  "undo_request": "Undo the setup task."
+}

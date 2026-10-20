@@ -1,0 +1,5 @@
+# Runtime fixes verified with BEHAVIOR-1K v3.9.3-post2 / Isaac Sim 5.1.0.
+# OmniGibson imports warp directly; its primitives extra specifies this version.
+warp-lang==1.12.0
+# PyArrow 26 failed with Isaac Sim's NumPy 1.26.0; LeRobot allows >=21,<30.
+pyarrow==21.0.0

@@ -1,0 +1,5 @@
+* text=auto
+*.png binary
+*.pdf binary
+# Unified diffs contain meaningful single-space context lines.
+*.patch -whitespace

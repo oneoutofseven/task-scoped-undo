@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "task-scoped-undo"
+version = "0.1.0"
+description = "History-conditioned physical undo with restoration and protection constraints"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+task-undo = "task_undo.application.cli:main"
+task-undo-predict = "task_undo.application.predict:main"
+task-undo-bind-labels = "task_undo.application.reference:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

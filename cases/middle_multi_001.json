@@ -1,0 +1,165 @@
+{
+  "episode_id": "middle_multi_001",
+  "description": "Set out the plate, complete a middle task involving the plate and cup, then move the book in two independent activities. Undoing the middle task restores two objects; the plate destination differs from its initial location.",
+  "objects": [
+    {
+      "type": "DatasetObject",
+      "name": "plate",
+      "category": "plate",
+      "model": "aewthq",
+      "position": [
+        -0.75,
+        -1.15,
+        0.55
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "cup",
+      "category": "mug",
+      "model": "dhnxww",
+      "position": [
+        -0.3,
+        -0.8,
+        0.6
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "book",
+      "category": "hardback",
+      "model": "acaxtl",
+      "position": [
+        -0.2,
+        -1.4,
+        0.6
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "dining_table",
+      "category": "breakfast_table",
+      "model": "rjgmmy",
+      "scale": [
+        1.1,
+        1.1,
+        0.7
+      ],
+      "position": [
+        -1.05,
+        0.65,
+        0.4
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "DatasetObject",
+      "name": "desk",
+      "category": "breakfast_table",
+      "model": "rjgmmy",
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "position": [
+        1.1,
+        0.25,
+        0.4
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "surfaces": {
+    "storage_surface": "coffee_table_fqluyq_0",
+    "dining_table": "dining_table",
+    "desk": "desk"
+  },
+  "tasks": [
+    {
+      "task_id": "A",
+      "initiator": "user",
+      "executor": "robot",
+      "instruction": "First place the plate on the dining table for daytime use.",
+      "moves": [
+        [
+          "plate",
+          "dining_table"
+        ]
+      ]
+    },
+    {
+      "task_id": "B",
+      "initiator": "user",
+      "executor": "robot",
+      "instruction": "Arrange afternoon tea: move the plate from the dining table to the desk and the cup from the storage surface to the dining table.",
+      "moves": [
+        [
+          "plate",
+          "desk"
+        ],
+        [
+          "cup",
+          "dining_table"
+        ]
+      ]
+    },
+    {
+      "task_id": "C",
+      "initiator": "family_member",
+      "executor": "robot",
+      "instruction": "Reading activity: move the book from the storage surface to the desk.",
+      "moves": [
+        [
+          "book",
+          "desk"
+        ]
+      ]
+    },
+    {
+      "task_id": "D",
+      "initiator": "family_member",
+      "executor": "robot",
+      "instruction": "Tidy up for later: move the book from the desk back to the storage surface.",
+      "moves": [
+        [
+          "book",
+          "storage_surface"
+        ]
+      ]
+    }
+  ],
+  "undo_request": {
+    "actor": "user",
+    "target_task_id": "B",
+    "utterance": "Afternoon tea is cancelled. Undo the afternoon-tea arrangement."
+  }
+}
