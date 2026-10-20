@@ -121,8 +121,8 @@
     "tests/fixtures/dinner_history.json": "276e05edbd26af9504f960d87f9ad0feaa6c0d4d80434289c4609e21eda0df29",
     "tests/fixtures/reading_history.json": "ed15a315319547a0f3eedfda96c313f11d191c007e8d473bfb17181281843db7"
   },
-  "paper_snapshot": "icassp_code_release_001",
-  "paper_sha256": "7b111b1956431f0876a8294dab5bdcced067df16ac7a1ce934639cc3f76ea613",
+  "paper_snapshot": "icassp_abstract_code_001",
+  "paper_sha256": "d98cd681fa5087e750e8761a1a43f19c419596d6033cd91e1fd287cf03ff54f3",
   "architecture_sha256": "85495f1c533cd3e0461ecb0db96cf329e117184bd902c36f01358443e0e6e55d",
   "modified_copied_files_sha256": {
     "src/task_undo/evaluation/goals.py": "ac2d5230939620c00fba481bc6b6a1c0a7d05f38d7cb42bab7baa5976f4000e9",
